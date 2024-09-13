@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Categories</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, [User Name]</h1>
+            <h2>Voting Categories</h2>
+        </header>
+        <main>
+            <section class="categories">
+                <a href="vote.html?category=vice_president" class="category-btn">Vice President</a>
+                <a href="vote.html?category=secretary" class="category-btn">Secretary</a>
+                <a href="vote.html?category=finance" class="category-btn">Finance</a>
+                <a href="vote.html?category=academic_affairs" class="category-btn">Academic Affairs</a>
+                <a href="vote.html?category=sport_recreation" class="category-btn">Sport and Recreation</a>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 UNAM SRC Elections</p>
+        </footer>
+    </div>
+</body>
+</html>
