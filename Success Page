@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Successful</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vote Submitted Successfully!</h1>
+        </header>
+        <main>
+            <section class="success-message">
+                <p>Thank you for voting!</p>
+                <p>Your vote has been recorded.</p>
+                <a href="index.html" class="btn">Logout</a>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 UNAM SRC Elections</p>
+        </footer>
+    </div>
+</body>
+</html>
