@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for [Category]</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vote for [Category]</h1>
+        </header>
+        <main>
+            <section class="candidates">
+                <form id="voteForm" action="confirmation.html" method="get">
+                    <div class="candidate">
+                        <img src="img/candidate1.jpg" alt="Anna de Kler">
+                        <input type="radio" name="candidate" value="Anna de Kler" required> Anna de Kler
+                    </div>
+                    <div class="candidate">
+                        <img src="img/candidate2.jpg" alt="Hether Leo">
+                        <input type="radio" name="candidate" value="Hether Leo" required> Hether Leo
+                    </div>
+                    <div class="candidate">
+                        <img src="img/candidate3.jpg" alt="Kia Noel">
+                        <input type="radio" name="candidate" value="Kia Noel" required> Kia Noel
+                    </div>
+                    <div class="candidate">
+                        <img src="img/candidate4.jpg" alt="Jasmine Makeba">
+                        <input type="radio" name="candidate" value="Jasmine Makeba" required> Jasmine Makeba
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 UNAM SRC Elections</p>
+        </footer>
+    </div>
+</body>
+</html>
