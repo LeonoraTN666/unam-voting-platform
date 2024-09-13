@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNAM Voting Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UNAM Voting Platform</h1>
+        </header>
+        <main>
+            <section class="login-section">
+                <h2>Login</h2>
+                <form action="categories.html" method="get">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit" class="btn">Log in</button>
+                </form>
+                <a href="#">Forgot Password?</a>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 UNAM SRC Elections</p>
+        </footer>
+    </div>
+</body>
+</html>
