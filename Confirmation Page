@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Vote</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Confirm Your Vote</h1>
+        </header>
+        <main>
+            <section class="confirmation">
+                <h2>You selected:</h2>
+                <div class="selected-candidate">
+                    <img src="img/candidate_selected.jpg" alt="[Selected Candidate Name]">
+                    <p>[Selected Candidate Name]</p>
+                </div>
+                <form action="success.html" method="get">
+                    <button type="submit" class="btn">Confirm</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 UNAM SRC Elections</p>
+        </footer>
+    </div>
+</body>
+</html>
