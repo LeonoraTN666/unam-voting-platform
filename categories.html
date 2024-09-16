@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Category</title>
+    <title>Categories - UNAM Voting Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Categories</h2>
-        <ul>
-            <li><a href="vote.html?category=vice-president">Vice President</a></li>
-            <li><a href="vote.html?category=secretary">Secretary</a></li>
-            <li><a href="vote.html?category=finance-manager">Finance Manager</a></li>
-            <li><a href="vote.html?category=academic-affairs-coordinator">Academic Affairs Coordinator</a></li>
-            <li><a href="vote.html?category=sport-recreation-officer">Sport and Recreation Officer</a></li>
-            <li><a href="vote.html?category=social-cultural-coordinator">Social and Cultural Coordinator</a></li>
-            <li><a href="vote.html?category=public-relations-officer">Public Relations Officer</a></li>
-        </ul>
+    <div class="categories-container">
+        <h1 id="greeting"></h1>
+
+        <!-- Box containing information -->
+        <div class="info-box">
+            <p>Your vote is <strong>anonymous!</strong></p>
+            <ul>
+                <li>Double tap on the screen to zoom in or out</li>
+                <li>Tap and hold screen for voice assistance</li>
+                <li>For help, tap on the "help" button below</li>
+            </ul>
+            <button class="help-button">Help</button>
+        </div>
+
+        <h2>Select a category to vote:</h2>
+        <div class="categories">
+            <div class="category-rect">
+                <a href="vote.html?category=VicePresident">Vice President</a>
+            </div>
+            <div class="category-rect">
+                <a href="vote.html?category=Secretary">Secretary</a>
+            </div>
+            <div class="category-rect">
+                <a href="vote.html?category=Finance">Finance</a>
+            </div>
+            <div class="category-rect">
+                <a href="vote.html?category=AcademicAffairs">Academic Affairs</a>
+            </div>
+        </div>
+        <button id="logoutBtn">Logout</button>
     </div>
+
+    <script src="categories.js"></script>
 </body>
 </html>
