@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        // Basic validation for username and password
         if (username && password) {
-            // Save the username in localStorage and redirect to the voting page
             localStorage.setItem('username', username);
             window.location.href = 'vote.html';
         } else {
@@ -17,23 +15,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Show username on vote.html
     const usernameDisplay = document.getElementById('usernameDisplay');
     if (usernameDisplay) {
         const username = localStorage.getItem('username');
         if (username) {
             usernameDisplay.textContent = `Hi, ${username}! Welcome to the 2024 UNAM SRC election.`;
         } else {
-            window.location.href = 'index.html'; // Redirect to login if no username is found
+            window.location.href = 'index.html'; 
         }
     }
 });
 
-// Voice Assistance Feature
+// Voice Assistance functionality
 let voiceAssistanceOn = false;
 
-document.getElementById('voice-assist-btn').addEventListener('click', function () {
-    const voiceAssistStatus = document.getElementById('voice-assist-status');
+const voiceAssistButton = document.getElementById('voice-assist-btn');
+const voiceAssistStatus = document.getElementById('voice-assist-status');
+
+voiceAssistButton.addEventListener('click', function () {
     voiceAssistanceOn = !voiceAssistanceOn;
     if (voiceAssistanceOn) {
         voiceAssistStatus.textContent = 'Voice assistance activated';
@@ -45,20 +44,22 @@ document.getElementById('voice-assist-btn').addEventListener('click', function (
 });
 
 function activateVoiceAssistance() {
-    const buttons = document.querySelectorAll('button, input[type="submit"]');
+    const buttons = document.querySelectorAll('button, input[type="submit"], input[type="radio"]');
     buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const text = button.textContent || button.value;
-            readOutLoud(text);
-        });
+        button.addEventListener('click', readButton);
     });
 }
 
 function deactivateVoiceAssistance() {
-    const buttons = document.querySelectorAll('button, input[type="submit"]');
+    const buttons = document.querySelectorAll('button, input[type="submit"], input[type="radio"]');
     buttons.forEach(button => {
-        button.removeEventListener('click', readOutLoud);
+        button.removeEventListener('click', readButton);
     });
+}
+
+function readButton(event) {
+    const text = event.target.textContent || event.target.value || event.target.alt;
+    readOutLoud(text);
 }
 
 function readOutLoud(message) {
@@ -75,7 +76,6 @@ categories.forEach(category => {
     });
 });
 
-// Load candidates based on selected category
 document.addEventListener('DOMContentLoaded', function () {
     const candidatesContainer = document.getElementById('candidates');
     const categoryTitle = document.getElementById('categoryTitle');
@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedCategory = localStorage.getItem('currentCategory');
         categoryTitle.textContent = `Category | ${selectedCategory}`;
 
-        // Load candidates dynamically
         const candidates = getCandidatesByCategory(selectedCategory);
         candidates.forEach(candidate => {
             const candidateItem = `
