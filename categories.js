@@ -5,7 +5,7 @@ const username = localStorage.getItem('username') || 'Guest';
 
 // Display the greeting with the username
 const greetingElement = document.getElementById('greeting');
-greetingElement.textContent = `Hello, ${username}! Welcome to the voting platform.`;
+greetingElement.textContent = `Hello, ${username}! Welcome to the 2024 voting platform.`;
 
 // Handle logout functionality
 document.getElementById('logoutBtn').addEventListener('click', function() {
