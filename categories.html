@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="categories-container">
+    <div class="categories-container" id="categoriesContainer">
+        <!-- Greeting will be populated dynamically -->
         <h1 id="greeting"></h1>
 
-        <!-- Box containing information -->
+        <!-- Box containing information below the greeting -->
         <div class="info-box">
             <p>Your vote is <strong>anonymous!</strong></p>
             <ul>
                 <li>Double tap on the screen to zoom in or out</li>
                 <li>Tap and hold screen for voice assistance</li>
-                <li>For help, tap on the "help" button below</li>
             </ul>
-            <button class="help-button">Help</button>
         </div>
 
+        <!-- Category selection -->
         <h2>Select a category to vote:</h2>
         <div class="categories">
             <div class="category-rect">
@@ -35,8 +35,30 @@
             <div class="category-rect">
                 <a href="vote.html?category=AcademicAffairs">Academic Affairs</a>
             </div>
+            <div class="category-rect">
+                <a href="vote.html?category=SportAndRecreation">Sport and Recreation</a>
+            </div>
+            <div class="category-rect">
+                <a href="vote.html?category=SocialAndCultural">Social and Cultural</a>
+            </div>
+            <div class="category-rect">
+                <a href="vote.html?category=PublicRelations">Public Relations</a>
+            </div>
         </div>
+
+        <!-- Help button -->
+        <button id="helpBtn">Help</button>
+        
+        <!-- Logout button -->
         <button id="logoutBtn">Logout</button>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <p>Contact the head of voting on 0817447484 or send an email to lnashipeta666@gmail.com<br>THANK YOU.</p>
+            <button id="backBtn">Back</button>
+        </div>
     </div>
 
     <script src="categories.js"></script>
