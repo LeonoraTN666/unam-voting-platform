@@ -1,136 +1,30 @@
-/* General styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+}
+
+.container, .login-container, .help-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2 {
-    text-align: center;
+    color: #d32f2f;
 }
 
-/* Logo styling */
-.logo {
-    display: block;
-    margin: 20px auto;
-    width: 100px;
-}
-
-/* Login Page */
-.login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.login-container h2 {
-    text-align: center;
-}
-
-/* Categories Page */
-.categories-container {
-    text-align: center;
-    padding: 20px;
-}
-
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.category-rect {
-    background-color: lightgray;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 15px;
-    width: 150px;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.category-rect a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-}
-
-.info-box {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 5px;
-}
-
-/* Help Modal */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-}
-
-/* Voting Page */
-.voting-container {
-    padding: 20px;
-    text-align: center;
-}
-
-.candidates label {
-    display: block;
-    margin: 10px;
-}
-
-.candidates img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-/* Success Page */
-.success-container {
-    text-align: center;
-    padding: 20px;
-}
-
-.green-box {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.thank-you-box {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-/* Buttons */
 button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #007bff;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #d32f2f;
     color: white;
     border: none;
     border-radius: 5px;
@@ -138,5 +32,23 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #c12727;
+}
+
+/* Voice assistance toggle button */
+#voice-assist-btn {
+    background-color: #4caf50;
+}
+
+.success-box, .info-box {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.category-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
