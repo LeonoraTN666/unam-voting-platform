@@ -1,71 +1,142 @@
-/* styles.css */
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
 }
 
-.login-container, .categories-container, .vote-container, .confirmation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+h1, h2 {
+    text-align: center;
+}
+
+/* Logo styling */
+.logo {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+}
+
+/* Login Page */
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.login-container h2 {
+    text-align: center;
+}
+
+/* Categories Page */
+.categories-container {
+    text-align: center;
     padding: 20px;
 }
 
 .categories {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .category-rect {
-    background-color: #e0e0e0;
-    padding: 20px;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 150px;
     text-align: center;
-    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+.category-rect a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.info-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+/* Help Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Voting Page */
+.voting-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.candidates label {
+    display: block;
+    margin: 10px;
+}
+
+.candidates img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Success Page */
+.success-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.green-box {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.thank-you-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Buttons */
 button {
-    background-color: #f44336;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #d32f2f;
-}
-
-#logoutBtn {
-    margin-top: 20px;
-}
-
-/* Info Box styling */
-.info-box {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: left;
-    width: 80%;
-    max-width: 500px;
-}
-
-.info-box p {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.info-box ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.info-box ul li {
-    margin-bottom: 8px;
+    background-color: #0056b3;
 }
