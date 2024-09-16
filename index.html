@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNAM Voting Platform - Login</title>
     <link rel="stylesheet" href="styles.css">
+    <title>UNAM Voting Platform</title>
 </head>
 <body>
     <div class="login-container">
-        <img src="unam-logo.png" alt="UNAM Logo" class="logo"> <!-- UNAM Logo -->
-        <h2>Voting Platform</h2>
+        <!-- Add the UNAM logo (Replace the path with the actual image path) -->
+        <img src="unam-logo.png" alt="UNAM Logo" class="logo">
+        <h2>Login</h2>
         <form id="loginForm">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" required>
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" required>
-            </div>
-            <button type="submit">Log in</button>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="login-btn">Log in</button>
         </form>
-        <p id="errorMessage" style="color: red;"></p>
     </div>
-
-    <script src="login.js"></script>
+    <script src="vote.js"></script>
 </body>
 </html>
