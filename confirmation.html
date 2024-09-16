@@ -3,29 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirm Vote</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Confirmation - UNAM Voting Platform</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Confirm Your Vote</h1>
-        </header>
-        <main>
-            <section class="confirmation">
-                <h2>You selected:</h2>
-                <div class="selected-candidate">
-                    <img src="img/candidate_selected.jpg" alt="[Selected Candidate Name]">
-                    <p>[Selected Candidate Name]</p>
-                </div>
-                <form action="success.html" method="get">
-                    <button type="submit" class="btn">Confirm</button>
-                </form>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2024 UNAM SRC Elections</p>
-        </footer>
+    <div class="confirmation-container">
+        <div class="green-box">
+            <p>Vote Successfully Submitted!</p>
+        </div>
+
+        <div class="info-box">
+            <p>Thank you for the time you took to vote.</p>
+        </div>
+
+        <button id="backToCategoriesBtn">Back to Categories</button>
+        <button id="logoutBtn">Logout</button>
     </div>
+
+    <script src="confirmation.js"></script>
 </body>
 </html>
