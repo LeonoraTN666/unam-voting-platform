@@ -1,12 +1,11 @@
-document.getElementById('login-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    
-    if (username && password) {
-        window.location.href = 'categories.html';
+// login.js
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+    const username = document.getElementById('username').value;
+
+    if (!username) {
+        alert('Please enter your username');
+        event.preventDefault();
     } else {
-        alert('Please enter both username and password.');
+        sessionStorage.setItem('username', username);
     }
 });
