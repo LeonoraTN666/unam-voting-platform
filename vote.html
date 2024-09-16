@@ -9,14 +9,17 @@
 <body>
     <div class="vote-container">
         <h1 id="categoryTitle"></h1>
+
+        <!-- Candidate list -->
         <form id="voteForm">
-            <div class="candidates" id="candidatesList">
-                <!-- Candidates will be dynamically loaded here -->
-            </div>
+            <label><input type="radio" name="candidate" value="Anna de Kler"> Anna de Kler</label><br>
+            <label><input type="radio" name="candidate" value="Hether Leo"> Hether Leo</label><br>
+            <label><input type="radio" name="candidate" value="Kia Noel"> Kia Noel</label><br>
+            <label><input type="radio" name="candidate" value="Jasmine Makeba"> Jasmine Makeba</label><br>
             <button type="submit">Submit</button>
         </form>
-        <button id="backToCategoriesBtn">Back to Categories</button>
-        <button id="logoutBtn">Logout</button>
+
+        <button id="backBtn">Back to Categories</button>
     </div>
 
     <script src="vote.js"></script>
