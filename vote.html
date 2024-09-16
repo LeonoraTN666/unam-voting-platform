@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting - UNAM Voting Platform</title>
     <link rel="stylesheet" href="styles.css">
+    <title>UNAM Voting Platform</title>
 </head>
 <body>
-    <div class="voting-container">
-        <h2>Vote for the <span id="categoryTitle"></span></h2>
-
-        <!-- Candidates List -->
-        <div class="candidates">
-            <label>
-                <input type="radio" name="candidate" value="Candidate 1">
-                <img src="candidate1.jpg" alt="Candidate 1"> <!-- Add image -->
-                Candidate 1
-            </label>
-            <label>
-                <input type="radio" name="candidate" value="Candidate 2">
-                <img src="candidate2.jpg" alt="Candidate 2"> <!-- Add image -->
-                Candidate 2
-            </label>
-            <label>
-                <input type="radio" name="candidate" value="Candidate 3">
-                <img src="candidate3.jpg" alt="Candidate 3"> <!-- Add image -->
-                Candidate 3
-            </label>
+    <div class="container">
+        <div class="greeting-box">
+            <h1>Hi, <span id="usernameDisplay"></span>!</h1>
+            <!-- Voting info box -->
+            <div class="info-box">
+                <p>Your vote is anonymous!</p>
+                <ul>
+                    <li>Double tap on the screen to zoom in or out</li>
+                    <li>Tap the "Voice Assistance" button to toggle reading aloud</li>
+                </ul>
+            </div>
+            <!-- Voice Assistance button -->
+            <button id="voice-assist-btn">Voice Assistance</button>
         </div>
 
-        <!-- Submit Button -->
-        <button id="submitVoteBtn">Submit</button>
+        <div class="categories">
+            <h2>Select a Category to Vote:</h2>
+            <div class="category-box">
+                <button class="category-btn" data-category="Vice President">Vice President</button>
+                <button class="category-btn" data-category="Secretary">Secretary</button>
+                <button class="category-btn" data-category="Finance">Finance</button>
+                <button class="category-btn" data-category="Academic Affairs">Academic Affairs</button>
+                <button class="category-btn" data-category="Sport and Recreation">Sport and Recreation</button>
+                <button class="category-btn" data-category="Social and Cultural">Social and Cultural</button>
+                <button class="category-btn" data-category="Public Relations">Public Relations</button>
+            </div>
+        </div>
     </div>
-
     <script src="vote.js"></script>
 </body>
 </html>
