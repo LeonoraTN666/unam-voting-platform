@@ -26,47 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Voice Assistance functionality
-let voiceAssistanceOn = false;
-
-const voiceAssistButton = document.getElementById('voice-assist-btn');
-const voiceAssistStatus = document.getElementById('voice-assist-status');
-
-voiceAssistButton.addEventListener('click', function () {
-    voiceAssistanceOn = !voiceAssistanceOn;
-    if (voiceAssistanceOn) {
-        voiceAssistStatus.textContent = 'Voice assistance activated';
-        activateVoiceAssistance();
-    } else {
-        voiceAssistStatus.textContent = 'Voice assistance deactivated';
-        deactivateVoiceAssistance();
-    }
-});
-
-function activateVoiceAssistance() {
-    const buttons = document.querySelectorAll('button, input[type="submit"], input[type="radio"]');
-    buttons.forEach(button => {
-        button.addEventListener('click', readButton);
-    });
-}
-
-function deactivateVoiceAssistance() {
-    const buttons = document.querySelectorAll('button, input[type="submit"], input[type="radio"]');
-    buttons.forEach(button => {
-        button.removeEventListener('click', readButton);
-    });
-}
-
-function readButton(event) {
-    const text = event.target.textContent || event.target.value || event.target.alt;
-    readOutLoud(text);
-}
-
-function readOutLoud(message) {
-    const speech = new SpeechSynthesisUtterance(message);
-    window.speechSynthesis.speak(speech);
-}
-
 // Voting functionality
 const categories = document.querySelectorAll('.category');
 categories.forEach(category => {
@@ -121,7 +80,7 @@ function getCandidatesByCategory(category) {
             { name: "Sophie Wells", image: "images/sophie.jpg" },
             { name: "Amanda Radebe", image: "images/amanda.jpg" }
         ],
-        // Add more categories and candidates as needed
+        // Add more categories and candidates if needed
     };
     return candidateList[category] || [];
 }
@@ -143,4 +102,36 @@ const logoutBtn = document.getElementById('logoutBtn');
 logoutBtn.addEventListener('click', function () {
     localStorage.removeItem('username');
     window.location.href = 'index.html';
+});
+
+// Help Button functionality
+const helpButton = document.getElementById('help-btn');
+helpButton.addEventListener('click', function () {
+    const helpMessage = document.createElement('div');
+    helpMessage.className = 'help-popup';
+    helpMessage.innerHTML = `
+        <p>Contact the head of voting on 0817447484 or send an email to lnashipeta666@gmail.com. THANK YOU.</p>
+        <button id="closeHelpBtn">Close</button>
+    `;
+    document.body.appendChild(helpMessage);
+
+    const closeHelpBtn = document.getElementById('closeHelpBtn');
+    closeHelpBtn.addEventListener('click', function () {
+        helpMessage.remove();
+    });
+});
+
+// Zoom feature
+const zoomInButton = document.getElementById('zoom-in-btn');
+const zoomOutButton = document.getElementById('zoom-out-btn');
+let zoomLevel = 1;
+
+zoomInButton.addEventListener('click', function () {
+    zoomLevel += 0.1;
+    document.body.style.transform = `scale(${zoomLevel})`;
+});
+
+zoomOutButton.addEventListener('click', function () {
+    zoomLevel -= 0.1;
+    document.body.style.transform = `scale(${zoomLevel})`;
 });
