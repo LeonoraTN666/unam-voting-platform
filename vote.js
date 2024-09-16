@@ -1,44 +1,55 @@
-const category = new URLSearchParams(window.location.search).get('category');
-document.getElementById('category-title').textContent = `Vote for ${category.replace('-', ' ')}`;
-
-const candidates = {
-    'vice-president': [
-        { name: 'Anna de Kler', img: 'anna.jpg' },
-        { name: 'Hether Leo', img: 'hether.jpg' },
-        { name: 'Kia Noel', img: 'kia.jpg' },
-        { name: 'Jasmine Makeba', img: 'jasmine.jpg' }
+// vote.js
+const candidatesData = {
+    VicePresident: [
+        { name: 'Anna de Kler', image: 'anna.jpg' },
+        { name: 'Hether Leo', image: 'hether.jpg' },
+        { name: 'Kia Noel', image: 'kia.jpg' },
+        { name: 'Jasmine Makeba', image: 'jasmine.jpg' }
     ],
-    'secretary': [
-        { name: 'John Shiweda', img: 'john.jpg' },
-        { name: 'Leon Kent', img: 'leon.jpg' },
-        { name: 'Love Dehate', img: 'love.jpg' }
+    Secretary: [
+        { name: 'John Shiweda', image: 'john.jpg' },
+        { name: 'Leon Kent', image: 'leon.jpg' },
+        { name: 'Love Dehate', image: 'love.jpg' }
     ],
-    'finance-manager': [
-        { name: 'Brian N', img: 'brian.jpg' },
-        { name: 'Catherine T', img: 'catherine.jpg' },
-        { name: 'David Z', img: 'david.jpg' }
+    Finance: [
+        { name: 'Victor Smith', image: 'victor.jpg' },
+        { name: 'Betty Brown', image: 'betty.jpg' },
+        { name: 'Steve Campbell', image: 'steve.jpg' }
     ],
-    // Add similar objects for other categories
+    AcademicAffairs: [
+        { name: 'Liza Mwiya', image: 'liza.jpg' },
+        { name: 'George Ndumba', image: 'george.jpg' },
+        { name: 'Sonia Hart', image: 'sonia.jpg' }
+    ]
 };
 
-function generateCandidates() {
-    const candidatesDiv = document.querySelector('.candidates');
-    candidates[category].forEach(candidate => {
-        const div = document.createElement('div');
-        div.classList.add('candidate');
-        div.innerHTML = `<img src="${candidate.img}" alt="${candidate.name}">
-                         <p>${candidate.name}</p>`;
-        candidatesDiv.appendChild(div);
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    const candidatesList = document.getElementById('candidatesList');
+    const categoryTitle = document.getElementById('categoryTitle');
+
+    if (category && candidatesData[category]) {
+        categoryTitle.textContent = `Vote for ${category.replace(/([A-Z])/g, ' $1').trim()}`;
+        candidatesData[category].forEach(candidate => {
+            const candidateDiv = document.createElement('div');
+            candidateDiv.innerHTML = `
+                <label>
+                    <input type="checkbox" name="candidate" value="${candidate.name}">
+                    <img src="${candidate.image}" alt="${candidate.name}">
+                    ${candidate.name}
+                </label>
+            `;
+            candidatesList.appendChild(candidateDiv);
+        });
+    }
+
+    document.getElementById('backToCategoriesBtn').addEventListener('click', function () {
+        window.location.href = 'categories.html';
     });
-}
 
-generateCandidates();
-
-document.getElementById('submit-vote').addEventListener('click', function () {
-    alert('Vote submitted successfully!');
-    window.location.href = 'categories.html';
-});
-
-document.getElementById('go-back').addEventListener('click', function () {
-    window.location.href = 'categories.html';
+    document.getElementById('logoutBtn').addEventListener('click', function () {
+        sessionStorage.clear();
+        window.location.href = 'login.html';
+    });
 });
