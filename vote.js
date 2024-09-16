@@ -1,23 +1,55 @@
-// vote.js
+document.addEventListener('DOMContentLoaded', function () {
+    const usernameDisplay = document.getElementById('usernameDisplay');
+    const username = localStorage.getItem('username');
+    usernameDisplay.textContent = username;
 
-// Retrieve the category from the URL
-const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get('category');
+    // Handle Voice Assistance
+    let voiceAssist = false;
+    const voiceAssistBtn = document.getElementById('voice-assist-btn');
+    voiceAssistBtn.addEventListener('click', () => {
+        voiceAssist = !voiceAssist;
+        voiceAssistBtn.textContent = voiceAssist ? 'Voice Assistance: ON' : 'Voice Assistance: OFF';
+        if (voiceAssist) {
+            alert('Voice Assistance Activated');
+        }
+    });
 
-// Display the selected category title
-document.getElementById('categoryTitle').textContent = category;
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function () {
+            if (voiceAssist) {
+                let speech = new SpeechSynthesisUtterance(button.textContent);
+                window.speechSynthesis.speak(speech);
+            }
+        });
+    });
 
-// Handle vote submission
-document.getElementById('submitVoteBtn').addEventListener('click', function() {
-    const selectedCandidate = document.querySelector('input[name="candidate"]:checked');
-    
-    if (selectedCandidate) {
-        // Store the vote in local storage (for demo purposes)
-        localStorage.setItem(`${category}Vote`, selectedCandidate.value);
+    // Voting logic
+    // Add event listeners for category buttons
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
+            localStorage.setItem('selectedCategory', category);
+            window.location.href = 'vote-category.html'; // Redirect to category-specific voting page
+        });
+    });
 
-        // Redirect to a success page after the vote is submitted
-        window.location.href = `success.html?category=${category}`;
-    } else {
-        alert('Please select a candidate before submitting your vote.');
+    // Logout function
+    function logout() {
+        localStorage.removeItem('username');
+        window.location.href = 'index.html';
+    }
+
+    // Back to Categories function
+    function backToCategories() {
+        window.location.href = 'vote.html';
+    }
+
+    // Help button action (if it's on the page)
+    const helpBtn = document.getElementById('help-btn');
+    if (helpBtn) {
+        helpBtn.addEventListener('click', () => {
+            window.location.href = 'help.html';
+        });
     }
 });
